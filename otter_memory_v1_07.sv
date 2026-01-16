@@ -69,8 +69,10 @@
     (* rom_style="{distributed | block}" *)
     (* ram_decomp = "power" *) logic [31:0] memory [0:16383];
     
+//    reg [31:0] mem[0:49];
     initial begin
-        $readmemh("performance.mem", memory, 0, 16383);
+        $readmemh("mem.mem", memory, 0, 16383);
+//        $readmem("mem.txt", mem);
     end
     
     assign wordAddr2 = MEM_ADDR2[15:2];
